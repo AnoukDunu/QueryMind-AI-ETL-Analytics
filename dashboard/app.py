@@ -1,18 +1,20 @@
 import os
 import sys
 
+# --------This was added by CoPilot to resolve an pathing issue affecting the streamlit dashboard!--------
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SRC_ROOT = os.path.join(PROJECT_ROOT, "src")
 
 for path in (PROJECT_ROOT, SRC_ROOT):
     if path not in sys.path:
         sys.path.insert(0, path)
+# --------End of CoPilot addition--------
 
 import streamlit as st
 import pandas as pd
 from database.connection import get_connection
 from ai.pipeline import ask_database
-
+# # The above pathing was changed to resolve an issue affecting the streamlit dashboard!
 st.title("Products Analytics Dashboard")
 
 # Establish database connection to fetch data for the dashboard
